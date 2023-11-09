@@ -35,6 +35,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)

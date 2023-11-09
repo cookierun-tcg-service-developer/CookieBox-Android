@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:data"))
 
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
