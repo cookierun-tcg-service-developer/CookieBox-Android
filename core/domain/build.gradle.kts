@@ -1,6 +1,8 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.library)
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.kapt)
 }
 
 android {
@@ -34,10 +36,14 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.appcompat)
+
+    implementation(libs.google.material)
+    implementation(libs.google.hilt)
+    kapt(libs.google.hilt.compiler)
+
+    testImplementation(libs.test.junit)
+    androidTestImplementation(libs.test.android.junit)
+    androidTestImplementation(libs.test.espresso)
 }
