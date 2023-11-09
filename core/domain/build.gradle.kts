@@ -1,26 +1,19 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.application)
+    alias(libs.plugins.library)
     alias(libs.plugins.kotlin)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.kapt)
 }
 
 android {
-    namespace = "com.example.cookiebox"
+    namespace = "com.example.domain"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.cookiebox"
         minSdk = 24
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,37 +32,17 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
+    implementation(project(":core:data"))
+
     implementation(libs.androidx.core)
     implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.navigation)
-
-    implementation(libs.compose)
-    implementation(libs.compose.tooling)
-    implementation(libs.compose.material)
-    implementation(libs.compose.preview)
 
     implementation(libs.google.material)
     implementation(libs.google.hilt)
     kapt(libs.google.hilt.compiler)
-
-    implementation(libs.libraries.retrofit)
-    implementation(libs.libraries.retrofit.converter.gson)
-    implementation(libs.libraries.okhttp)
-    implementation(libs.libraries.okhttp.logging.interceptor)
 
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.android.junit)
