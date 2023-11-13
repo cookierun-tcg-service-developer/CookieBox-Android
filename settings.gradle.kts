@@ -15,12 +15,16 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CookieBox"
-include(":app")
-include(":core:data")
-include(":core:domain")
-include(":core:model")
-include(":core:ui")
-include(":core:navigation")
-include(":feature:deck")
-include(":feature:card")
-include(":core:designsystem")
+include(
+    ":app",
+
+    ":core:data",
+    ":core:domain",
+    ":core:model",
+    ":core:ui",
+    ":core:navigation",
+    ":core:designsystem",
+
+    ":feature:deck",
+    ":feature:card"
+)
