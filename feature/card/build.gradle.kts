@@ -1,61 +1,11 @@
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.library)
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.kapt)
+    id("cookiebox.android.feature")
 }
 
 android {
     namespace = "com.example.card"
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:ui"))
-    implementation(project(":core:navigation"))
 
-    implementation(libs.androidx.core)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.navigation)
-    implementation(libs.androidx.viewmodel)
-
-    implementation(libs.compose)
-    implementation(libs.compose.tooling)
-    implementation(libs.compose.material)
-    implementation(libs.compose.preview)
-
-    implementation(libs.google.material)
-    implementation(libs.google.hilt)
-    kapt(libs.google.hilt.compiler)
-
-    implementation(libs.libraries.coil)
-
-    testImplementation(libs.test.junit)
-    androidTestImplementation(libs.test.android.junit)
-    androidTestImplementation(libs.test.espresso)
 }
