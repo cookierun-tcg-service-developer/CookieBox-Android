@@ -16,6 +16,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,7 +41,7 @@ fun CookieboxTextField(
     onValueChange: (String) -> Unit,
     trailingIcon: (@Composable () -> Unit)? = null,
 ) {
-    val coloredStyle = textStyle.copy(color = CookieboxTheme.color.grayscale40)
+    val coloredStyle = textStyle.copy(color = Color.Black)
 
     BasicTextField(
         modifier = Modifier
