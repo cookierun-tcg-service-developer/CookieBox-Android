@@ -24,6 +24,11 @@ val Yellow70 = Color(0xFFA59508)
 val Yellow80 = Color(0xFF574F04)
 val Yellow90 = Color(0xFF312C02)
 
+// TODO: 네이밍 변경하기
+val YellowGradientStart = Color(0xFFF4E02C)
+val YellowGradientEnd = Color(0xFFE9A62F)
+
+
 val Green5 = Color(0xFFE5FFF1)
 val Green10 = Color(0xFFB2FFD5)
 val Green20 = Color(0xFF80FFB9)
