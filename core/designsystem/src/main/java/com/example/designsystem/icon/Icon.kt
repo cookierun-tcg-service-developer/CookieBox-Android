@@ -14,6 +14,7 @@ fun IcCheckMark(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_checkmark),
         contentDescription = contentDescription,
         tint = tint
@@ -27,6 +28,7 @@ fun IcChevronDoubleDown(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_double_down),
         contentDescription = contentDescription,
         tint = tint
@@ -40,6 +42,7 @@ fun IcChevronDoubleLeft(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_double_left),
         contentDescription = contentDescription,
         tint = tint
@@ -53,6 +56,7 @@ fun IcChevronDoubleRight(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_double_right),
         contentDescription = contentDescription,
         tint = tint
@@ -66,6 +70,7 @@ fun IcChevronDoubleUp(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_double_up),
         contentDescription = contentDescription,
         tint = tint
@@ -79,6 +84,7 @@ fun IcChevronDown(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_down),
         contentDescription = contentDescription,
         tint = tint
@@ -92,6 +98,7 @@ fun IcChevronLeft(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_left),
         contentDescription = contentDescription,
         tint = tint
@@ -105,6 +112,7 @@ fun IcChevronRight(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_right),
         contentDescription = contentDescription,
         tint = tint
@@ -118,6 +126,7 @@ fun IcChevronUp(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_chevron_up),
         contentDescription = contentDescription,
         tint = tint
@@ -131,6 +140,7 @@ fun IcCopy(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_copy),
         contentDescription = contentDescription,
         tint = tint
@@ -144,6 +154,7 @@ fun IcCross(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_cross),
         contentDescription = contentDescription,
         tint = tint
@@ -157,6 +168,7 @@ fun IcFilter(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_filter),
         contentDescription = contentDescription,
         tint = tint
@@ -170,6 +182,7 @@ fun IcGarbage(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_garbage),
         contentDescription = contentDescription,
         tint = tint
@@ -183,6 +196,7 @@ fun IcHorizonEllipsis(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_horizon_ellipsis),
         contentDescription = contentDescription,
         tint = tint
@@ -196,6 +210,7 @@ fun IcLink(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_link),
         contentDescription = contentDescription,
         tint = tint
@@ -209,6 +224,7 @@ fun IcMinus(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_minus),
         contentDescription = contentDescription,
         tint = tint
@@ -222,6 +238,7 @@ fun IcPencil(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_pencil),
         contentDescription = contentDescription,
         tint = tint
@@ -235,6 +252,7 @@ fun IcPlus(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_plus),
         contentDescription = contentDescription,
         tint = tint
@@ -248,6 +266,7 @@ fun IcSearch(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_search),
         contentDescription = contentDescription,
         tint = tint
@@ -261,6 +280,7 @@ fun IcVerticalEllipsis(
     tint: Color = Color.Unspecified,
 ) {
     Icon(
+        modifier = modifier,
         painter = painterResource(id = R.drawable.ic_vertical_ellipsis),
         contentDescription = contentDescription,
         tint = tint
