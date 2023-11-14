@@ -1,4 +1,4 @@
-package com.example.designsystem.component
+package com.example.designsystem.component.button
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -82,10 +82,6 @@ fun buttonColors(buttonType: ButtonType, isPressed: Boolean): ButtonColors {
             disabledContentColor = Color.White
         )
     }
-}
-
-enum class ButtonType {
-    Primary, Secondary, Negative
 }
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
