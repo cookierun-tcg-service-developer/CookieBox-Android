@@ -26,6 +26,7 @@ import com.example.designsystem.theme.CookieboxTheme
 @Composable
 fun CookieboxButton(
     text: String,
+    useTextGradient: Boolean = true,
     buttonType: ButtonType = ButtonType.Primary,
     buttonColors: ButtonColors? = null,
     enabled: Boolean = true,
@@ -51,10 +52,12 @@ fun CookieboxButton(
         contentPadding = contentPadding,
         onClick = onClick
     ) {
+        val brush = if (buttonType == ButtonType.Primary && enabled) gradientBrush else null
+
         Text(
             text = text,
             style = CookieboxTheme.typography.textMediumR.copy(
-                brush = if (buttonType == ButtonType.Primary && enabled) gradientBrush else null
+                brush = if (useTextGradient) brush else null
             )
         )
     }
