@@ -129,13 +129,13 @@ fun CookieBoxDialog(
                 Column(
                     verticalArrangement = Arrangement.spacedBy(6.dp),
                 ) {
-                    skills.forEachIndexed { index, _ ->
+                    skills.forEachIndexed { index, skill ->
                         Text(
                             text = buildAnnotatedString {
                                 withStyle(style = SpanStyle(color = CookieboxTheme.color.grayscale40)) {
                                     append(skillCost[index])
                                 }
-                                append(" ${skills[index]}") // 4.dp 주는거 대신 빈 공백 추가
+                                append(" $skill") // 4.dp 주는거 대신 빈 공백 추가
                             },
                             style = CookieboxTheme.typography.captionR,
                             color = Color.Black
