@@ -71,7 +71,7 @@ fun CookieBoxDialog(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(
-                        color = CookieboxTheme.color.cardBackground,
+                        color = Color.White,
                         shape = RoundedCornerShape(8.dp),
                     )
                     .padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
@@ -99,12 +99,12 @@ fun CookieBoxDialog(
                     Text(
                         text = "LV.$cookieLevel",
                         style = CookieboxTheme.typography.textSmallR,
-                        color = CookieboxTheme.color.textSecondary,
+                        color = CookieboxTheme.color.grayscale40,
                     )
                     Text(
                         text = "HP.$cookieHp",
                         style = CookieboxTheme.typography.textSmallR,
-                        color = CookieboxTheme.color.textSecondary,
+                        color = CookieboxTheme.color.grayscale40,
                     )
                 }
 
@@ -123,7 +123,7 @@ fun CookieBoxDialog(
                     modifier = Modifier.padding(
                         bottom = 7.dp,
                     ),
-                    color = CookieboxTheme.color.dividerBackground,
+                    color = CookieboxTheme.color.grayscale10,
                 )
 
                 Column(
@@ -132,7 +132,7 @@ fun CookieBoxDialog(
                     skills.forEachIndexed { index, _ ->
                         Text(
                             text = buildAnnotatedString {
-                                withStyle(style = SpanStyle(color = CookieboxTheme.color.textSecondary)) {
+                                withStyle(style = SpanStyle(color = CookieboxTheme.color.grayscale40)) {
                                     append(skillCost[index])
                                 }
                                 append(" ${skills[index]}") // 4.dp 주는거 대신 빈 공백 추가
@@ -176,7 +176,7 @@ fun CookieBoxDeleteDialog(
             modifier = modifier
                 .fillMaxWidth()
                 .background(
-                    color = CookieboxTheme.color.cardBackground,
+                    color = Color.White,
                     shape = RoundedCornerShape(8.dp),
                 )
                 .padding(top = 16.dp, start = 8.dp, end = 8.dp, bottom = 8.dp),

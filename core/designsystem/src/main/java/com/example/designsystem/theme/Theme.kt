@@ -23,9 +23,6 @@ internal val Colors = CookieboxColor(
     brown90 = Brown90,
     orange40 = Orange40,
     cardTypeChip = CardTypeChip,
-    cardBackground = CardBackground,
-    textSecondary = TextSecondary,
-    dividerBackground = DividerBackground
 )
 
 @Immutable
@@ -46,9 +43,6 @@ data class CookieboxColor(
     val brown90: Color,
     val orange40: Color,
     val cardTypeChip: Color,
-    val cardBackground: Color,
-    val textSecondary: Color,
-    val dividerBackground: Color
 )
 
 val LocalColor = staticCompositionLocalOf { Colors }
