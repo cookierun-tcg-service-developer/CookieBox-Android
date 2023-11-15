@@ -183,17 +183,15 @@ fun CookieBoxDeleteDialog(
                 )
                 .padding(top = 16.dp, start = 8.dp, end = 8.dp, bottom = 8.dp),
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = "정말 삭제하실 건가요?",
-                    style = CookieboxTheme.typography.textLargeB,
-                    color = Color.Black
-                )
-            }
+            Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                text = "정말 삭제하실 건가요?",
+                style = CookieboxTheme.typography.textLargeB,
+                color = Color.Black
+            )
+
             content()
+
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
