@@ -26,7 +26,9 @@ import com.example.designsystem.theme.CookieboxTheme
 @Composable
 fun CookieboxButton(
     text: String,
+    useTextGradient: Boolean = true,
     buttonType: ButtonType = ButtonType.Primary,
+    buttonColors: ButtonColors? = null,
     enabled: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = RoundedCornerShape(8.dp),
@@ -46,14 +48,16 @@ fun CookieboxButton(
             width = 2.dp,
             color = if (enabled) borderColor else borderColor.copy(alpha = 0.5f)
         ) else null,
-        colors = buttonColors(buttonType = buttonType, isPressed = isPressed),
+        colors = buttonColors ?: buttonColors(buttonType = buttonType, isPressed = isPressed),
         contentPadding = contentPadding,
         onClick = onClick
     ) {
+        val brush = if (buttonType == ButtonType.Primary && enabled) gradientBrush else null
+
         Text(
             text = text,
             style = CookieboxTheme.typography.textMediumR.copy(
-                brush = if (buttonType == ButtonType.Primary && enabled) gradientBrush else null
+                brush = if (useTextGradient) brush else null
             )
         )
     }
