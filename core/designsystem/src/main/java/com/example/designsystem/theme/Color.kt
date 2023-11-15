@@ -72,3 +72,6 @@ val Orange60 = Color(0xFFAA6F08)
 val Orange70 = Color(0xFF7A4F06)
 val Orange80 = Color(0xFF493003)
 val Orange90 = Color(0xFF181001)
+
+// TODO: 네이밍 변경하기
+val CardTypeChip = Color(0xFF955A40)
