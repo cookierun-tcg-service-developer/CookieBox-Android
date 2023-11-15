@@ -47,6 +47,8 @@ fun CookieBoxDialog(
     skills: List<String>,
     skillCost: List<String>,
     onDismissRequest: () -> Unit,
+    onSave: () -> Unit,
+    onCopy: () -> Unit,
 ) {
     Dialog(
         onDismissRequest = onDismissRequest,
@@ -152,12 +154,12 @@ fun CookieBoxDialog(
                     CookieboxButton(
                         text = "텍스트 복사",
                         buttonType = ButtonType.Secondary,
-                    ) { }
+                    ) { onCopy() }
                     Spacer(modifier = Modifier.width(8.dp))
                     CookieboxButton(
                         text = "덱에 담기",
                         buttonType = ButtonType.Primary,
-                    ) { }
+                    ) { onSave() }
                 }
             }
         }
@@ -250,7 +252,10 @@ fun CookieBoxDialogPreview() {
                 "<옐로3><믹스1>",
                 "<옐로2><믹스2>",
             ),
-        ) {}
+            onCopy = {},
+            onSave = {},
+            onDismissRequest = {},
+        )
 
         CookieBoxDeleteDialog(
             onDismissRequest = { /*TODO*/ },
