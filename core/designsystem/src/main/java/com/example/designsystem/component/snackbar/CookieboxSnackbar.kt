@@ -1,8 +1,6 @@
 package com.example.designsystem.component.snackbar
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
@@ -18,21 +16,17 @@ fun CookieboxSnackbar(
     modifier: Modifier = Modifier,
     text: String,
 ) {
-    Row(
+    Text(
         modifier = modifier
             .background(
                 color = Color.White,
-                shape = RoundedCornerShape(4.dp)
+                shape = RoundedCornerShape(4.dp),
             )
             .padding(horizontal = 25.dp, vertical = 5.dp),
-        horizontalArrangement = Arrangement.Center,
-    ) {
-        Text(
-            text = text,
-            style = CookieboxTheme.typography.textSmallR,
-            color = Color.Black
-        )
-    }
+        text = text,
+        style = CookieboxTheme.typography.textSmallR,
+        color = Color.Black,
+    )
 }
 
 @Preview
