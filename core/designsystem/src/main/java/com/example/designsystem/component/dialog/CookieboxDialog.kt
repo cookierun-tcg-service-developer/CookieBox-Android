@@ -47,8 +47,8 @@ fun CookieBoxDialog(
     skills: List<String>,
     skillCost: List<String>,
     onDismissRequest: () -> Unit,
-    onSave: () -> Unit,
-    onCopy: () -> Unit,
+    onCardSave: () -> Unit,
+    onTextCopy: () -> Unit,
 ) {
     Dialog(
         onDismissRequest = onDismissRequest,
@@ -140,7 +140,7 @@ fun CookieBoxDialog(
                                 append(" $skill") // 4.dp 주는거 대신 빈 공백 추가
                             },
                             style = CookieboxTheme.typography.captionR,
-                            color = Color.Black
+                            color = Color.Black,
                         )
                     }
                 }
@@ -154,12 +154,14 @@ fun CookieBoxDialog(
                     CookieboxButton(
                         text = "텍스트 복사",
                         buttonType = ButtonType.Secondary,
-                    ) { onCopy() }
+                        onClick = onTextCopy,
+                    )
                     Spacer(modifier = Modifier.width(8.dp))
                     CookieboxButton(
                         text = "덱에 담기",
                         buttonType = ButtonType.Primary,
-                    ) { onSave() }
+                        onClick = onCardSave,
+                    )
                 }
             }
         }
@@ -170,7 +172,7 @@ fun CookieBoxDialog(
 fun CookieBoxDeleteDialog(
     modifier: Modifier = Modifier,
     onDismissRequest: () -> Unit,
-    onDelete: () -> Unit,
+    onCardDelete: () -> Unit,
     content: @Composable () -> Unit,
 ) {
     Dialog(onDismissRequest = onDismissRequest) {
@@ -216,7 +218,7 @@ fun CookieBoxDeleteDialog(
                         .clickable(
                             interactionSource = remember { MutableInteractionSource() },
                             indication = null,
-                            onClick = onDelete
+                            onClick = onCardDelete
                         ),
                     text = "삭제",
                     style = CookieboxTheme.typography.textMediumR,
@@ -250,14 +252,14 @@ fun CookieBoxDialogPreview() {
                 "<옐로3><믹스1>",
                 "<옐로2><믹스2>",
             ),
-            onCopy = {},
-            onSave = {},
+            onTextCopy = {},
+            onCardSave = {},
             onDismissRequest = {},
         )
 
         CookieBoxDeleteDialog(
             onDismissRequest = { /*TODO*/ },
-            onDelete = {},
+            onCardDelete = {},
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth(),
