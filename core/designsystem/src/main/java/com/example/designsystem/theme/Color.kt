@@ -75,3 +75,10 @@ val Orange90 = Color(0xFF181001)
 
 // TODO: 네이밍 변경하기
 val CardTypeChip = Color(0xFF955A40)
+
+val CardBackground = Color(0xFFFFFFFF)
+
+val TextSecondary = Color(0xFF8C8C8C)
+
+val DividerBackground = Color(0xFFD9D9D9)
+
