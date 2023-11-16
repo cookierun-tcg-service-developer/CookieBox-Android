@@ -37,6 +37,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun CookieboxDeckBottomSheet(
     modifier: Modifier = Modifier,
+    count: Int,
+    imageUrl: String,
     scaffoldState: BottomSheetScaffoldState,
     onMinusClick: () -> Unit,
     content: @Composable () -> Unit,
@@ -46,8 +48,8 @@ fun CookieboxDeckBottomSheet(
         scaffoldState = scaffoldState,
         sheetContent = {
             CookieboxDeckBottomSheetContent(
-                imageUrl = "",
-                count = 4,
+                imageUrl = imageUrl,
+                count = count,
                 onMinusClick = onMinusClick,
             )
         },
@@ -123,6 +125,8 @@ fun CookieboxDeckBottomSheetPreview() {
 
     Column(Modifier.fillMaxSize()) {
         CookieboxDeckBottomSheet(
+            imageUrl = "",
+            count = 4,
             scaffoldState = scaffoldState,
             onMinusClick = {}
         ) {
