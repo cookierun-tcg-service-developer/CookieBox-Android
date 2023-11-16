@@ -8,6 +8,7 @@ import androidx.compose.material.ButtonDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -15,16 +16,21 @@ import com.example.designsystem.theme.CookieboxTheme
 
 @Composable
 fun CookieboxSegmentedButton(
+    modifier: Modifier = Modifier,
     items: List<String>,
-    contentPadding: PaddingValues = PaddingValues(horizontal = 24.dp, vertical = 11.dp),
+    contentPadding: PaddingValues = PaddingValues(vertical = 11.dp),
 ) {
     val checkedList = remember { mutableStateListOf<Int>() }
 
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         items.forEachIndexed { index, item ->
             val backgroundColor = backgroundColor(item = item)
 
             CookieboxButton(
+                modifier = Modifier.weight(1f),
                 text = item,
                 useTextGradient = false,
                 buttonColors = ButtonDefaults.buttonColors(
