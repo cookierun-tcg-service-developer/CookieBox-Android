@@ -76,3 +76,4 @@ val Orange90 = Color(0xFF181001)
 // TODO: 네이밍 변경하기
 val CardTypeChip = Color(0xFF955A40)
 val CardMinus = Color(0xFFF20D0D)
+val DeckBottomSheet = Color(0xFFB3B3B3)
