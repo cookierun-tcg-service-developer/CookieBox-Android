@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.SpanStyle
@@ -79,15 +81,30 @@ fun CookieBoxDialog(
                     .padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
-
-                AsyncImage(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(250.dp),
-                    model = imageUrl,
-                    contentDescription = "cookieImage",
-                    contentScale = ContentScale.Fit
-                )
+                Box {
+                    AsyncImage(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(250.dp),
+                        model = imageUrl,
+                        contentDescription = "cookieImage",
+                        contentScale = ContentScale.Fit
+                    )
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.verticalGradient(
+                                    listOf(
+                                        Color.Transparent,
+                                        Color.White,
+                                    )
+                                )
+                            )
+                            .height(40.dp)
+                            .align(Alignment.BottomCenter),
+                    )
+                }
 
                 Row(
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -257,26 +274,26 @@ fun CookieBoxDialogPreview() {
             onDismissRequest = {},
         )
 
-        CookieBoxDeleteDialog(
-            onDismissRequest = { /*TODO*/ },
-            onCardDelete = {},
-        ) {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "아클레어 컨트롤",
-                    style = CookieboxTheme.typography.textSmallR,
-                    color = CookieboxTheme.color.red50,
-                )
-                Text(
-                    text = "을 삭제하면 되돌릴 수 없어요",
-                    style = CookieboxTheme.typography.textSmallR,
-                    color = CookieboxTheme.color.grayscale40,
-                )
-            }
-        }
+//        CookieBoxDeleteDialog(
+//            onDismissRequest = { /*TODO*/ },
+//            onCardDelete = {},
+//        ) {
+//            Column(
+//                modifier = Modifier.fillMaxWidth(),
+//                horizontalAlignment = Alignment.CenterHorizontally,
+//            ) {
+//                Spacer(modifier = Modifier.height(8.dp))
+//                Text(
+//                    text = "아클레어 컨트롤",
+//                    style = CookieboxTheme.typography.textSmallR,
+//                    color = CookieboxTheme.color.red50,
+//                )
+//                Text(
+//                    text = "을 삭제하면 되돌릴 수 없어요",
+//                    style = CookieboxTheme.typography.textSmallR,
+//                    color = CookieboxTheme.color.grayscale40,
+//                )
+//            }
+//        }
     }
 }
