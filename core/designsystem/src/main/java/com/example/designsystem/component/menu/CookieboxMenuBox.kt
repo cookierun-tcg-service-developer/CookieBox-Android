@@ -31,8 +31,8 @@ fun CookieboxMenuBox(
     items: List<String>,
     menuMaxHeight: Dp = 264.dp,
     isInitialValue: Boolean = true,
-    onExpandedChange: (Boolean) -> Unit,
     onDismissRequest: () -> Unit,
+    onExpandedChange: (Boolean) -> Unit,
     onItemClicked: (String) -> Unit,
 ) {
     ExposedDropdownMenuBox(
@@ -94,8 +94,8 @@ fun PreviewCookieboxMenu() {
             isInitialValue = startLevel == startLevelOptions.first(),
             items = startLevelOptions,
             expanded = startLevelExpanded,
-            onExpandedChange = { startLevelExpanded = it },
             onDismissRequest = { startLevelExpanded = false },
+            onExpandedChange = { startLevelExpanded = it },
             onItemClicked = { startLevel = it },
         )
         CookieboxMenuBox(
@@ -104,8 +104,8 @@ fun PreviewCookieboxMenu() {
             isInitialValue = endLevel == endLevelOptions.first(),
             items = endLevelOptions,
             expanded = endLevelExpanded,
-            onExpandedChange = { endLevelExpanded = it },
             onDismissRequest = { endLevelExpanded = false },
+            onExpandedChange = { endLevelExpanded = it },
             onItemClicked = { endLevel = it },
         )
     }
