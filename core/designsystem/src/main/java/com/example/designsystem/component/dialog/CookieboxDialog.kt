@@ -90,7 +90,7 @@ fun CookieBoxDialog(
                         contentDescription = "cookieImage",
                         contentScale = ContentScale.Fit
                     )
-                    Text(
+                    Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .background(
@@ -103,7 +103,6 @@ fun CookieBoxDialog(
                             )
                             .height(40.dp)
                             .align(Alignment.BottomCenter),
-                        text = "",
                     )
                 }
 
