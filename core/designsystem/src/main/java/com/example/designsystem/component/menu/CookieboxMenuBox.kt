@@ -27,10 +27,10 @@ import com.example.designsystem.theme.CookieboxTheme
 fun CookieboxMenuBox(
     modifier: Modifier = Modifier,
     value: String,
-    isInitialValue: Boolean = true,
+    expanded: Boolean,
     items: List<String>,
     menuMaxHeight: Dp = 264.dp,
-    expanded: Boolean,
+    isInitialValue: Boolean = true,
     onExpandedChange: (Boolean) -> Unit,
     onDismissRequest: () -> Unit,
     onItemClicked: (String) -> Unit,
