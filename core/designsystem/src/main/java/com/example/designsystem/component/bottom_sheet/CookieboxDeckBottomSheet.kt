@@ -1,8 +1,10 @@
 package com.example.designsystem.component.bottom_sheet
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -94,17 +96,12 @@ fun CookieboxDeckBottomSheetContent(
         LazyRow(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(
-                    top = 8.dp,
-                )
+                .padding(top = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(horizontal = 16.dp),
         ) {
             items(15) {
                 CookieboxDeckItem(
-                    modifier = Modifier
-                        .padding( // 추 후 list 형식(mock json)이 정해지면 list로 수정 예정
-                            start = if (it == 0) 16.dp else 8.dp,
-                            end = if (it == 14) 16.dp else 0.dp
-                        ),
                     deckItemType = deckItemType,
                     imageUrl = imageUrl,
                     count = count,
