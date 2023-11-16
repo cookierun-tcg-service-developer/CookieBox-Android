@@ -32,15 +32,14 @@ fun CookieboxDeckItem(
     deckItemType: DeckItemType,
     imageUrl: String,
     count: Int,
-    imageWidth: Dp,
-    imageHeight: Dp,
     onMinusClick: () -> Unit,
 ) {
    Box(
        modifier = modifier
            .size(
-               width = imageWidth,
-               height = imageHeight,
+               width = deckItemSize(deckItemType),
+               height = if (deckItemType == DeckItemType.BottomSheet) deckItemSize(deckItemType) + 12.dp
+               else deckItemSize(deckItemType) + 40.dp,
            ),
    ) {
        AsyncImage(
@@ -95,6 +94,14 @@ fun CookieboxDeckItem(
        }
    }
 }
+
+fun deckItemSize(deckItemType: DeckItemType): Dp {
+    return when(deckItemType) {
+        DeckItemType.BottomSheet -> 44.dp
+        DeckItemType.Detail -> 104.dp
+    }
+}
+
 @Preview(showBackground = true, backgroundColor = 0xFFFFFF)
 @Composable
 fun CookieboxDeckItemPreview() {
@@ -103,8 +110,6 @@ fun CookieboxDeckItemPreview() {
             deckItemType = DeckItemType.BottomSheet,
             imageUrl = "",
             count = 1,
-            imageWidth = 48.dp,
-            imageHeight = 66.dp,
         ) {}
 
         Spacer(modifier = Modifier.width(10.dp))
@@ -113,8 +118,6 @@ fun CookieboxDeckItemPreview() {
             deckItemType = DeckItemType.Detail,
             imageUrl = "",
             count = 2,
-            imageWidth = 104.dp,
-            imageHeight = 144.dp,
         ) {}
     }
 }
