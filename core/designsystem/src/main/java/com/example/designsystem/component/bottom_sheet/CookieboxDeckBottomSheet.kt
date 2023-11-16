@@ -122,9 +122,7 @@ fun CookieboxDeckBottomSheetPreview() {
     )
     val scope = rememberCoroutineScope()
 
-    Column(
-        Modifier.fillMaxSize()
-    ) {
+    Column(Modifier.fillMaxSize()) {
         CookieboxDeckBottomSheet(
             scaffoldState = scaffoldState,
             onMinusClick = {}
