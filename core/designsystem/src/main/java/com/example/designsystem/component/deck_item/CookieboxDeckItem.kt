@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.designsystem.icon.IcMinus
@@ -36,11 +36,7 @@ fun CookieboxDeckItem(
 ) {
    Box(
        modifier = modifier
-           .size(
-               width = deckItemSize(deckItemType),
-               height = if (deckItemType == DeckItemType.BottomSheet) deckItemSize(deckItemType) + 12.dp
-               else deckItemSize(deckItemType) + 40.dp,
-           ),
+           .size(deckItemSize(deckItemType)),
    ) {
        AsyncImage(
            model = imageUrl,
@@ -95,10 +91,10 @@ fun CookieboxDeckItem(
    }
 }
 
-fun deckItemSize(deckItemType: DeckItemType): Dp {
+fun deckItemSize(deckItemType: DeckItemType): DpSize {
     return when(deckItemType) {
-        DeckItemType.BottomSheet -> 44.dp
-        DeckItemType.Detail -> 104.dp
+        DeckItemType.BottomSheet -> DpSize(48.dp, 66.dp)
+        DeckItemType.Detail -> DpSize(104.dp, 144.dp)
     }
 }
 
