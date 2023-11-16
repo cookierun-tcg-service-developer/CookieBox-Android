@@ -34,11 +34,13 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun CookieboxDeckBottomSheet(
+    modifier: Modifier = Modifier,
     scaffoldState: BottomSheetScaffoldState,
     onMinusClick: () -> Unit,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     BottomSheetScaffold(
+        modifier = modifier,
         scaffoldState = scaffoldState,
         sheetContent = {
             CookieboxDeckBottomSheetContent(
