@@ -45,7 +45,11 @@ fun CookieboxMenuBox(
             onValueChange = {},
             readOnly = true,
             colors = TextFieldDefaults.textFieldColors(
-                backgroundColor = if (expanded || !isInitialValue) CookieboxTheme.color.grayscale80 else CookieboxTheme.color.grayscale5,
+                backgroundColor = if (expanded || !isInitialValue) {
+                    CookieboxTheme.color.grayscale80
+                } else {
+                    CookieboxTheme.color.grayscale5
+                },
                 textColor = if (expanded || !isInitialValue) Color.White else CookieboxTheme.color.grayscale40,
                 unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = CookieboxTheme.color.grayscale40
