@@ -52,14 +52,14 @@ fun CookieboxMenuBox(
                 },
                 textColor = if (expanded || !isInitialValue) Color.White else CookieboxTheme.color.grayscale40,
                 unfocusedIndicatorColor = Color.Transparent,
-                focusedIndicatorColor = CookieboxTheme.color.grayscale40
+                focusedIndicatorColor = Color.Transparent
             ),
-            shape = if (expanded) RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp) else RoundedCornerShape(8.dp),
+            shape = if (expanded) RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp) else RoundedCornerShape(8.dp),
             textStyle = CookieboxTheme.typography.textMediumR,
             trailingIcon = {
                 val dynamicTint = if (expanded || !isInitialValue) Color.White else CookieboxTheme.color.grayscale40
 
-                if (expanded) IcChevronDown(tint = Color.White) else IcChevronUp(tint = dynamicTint)
+                if (expanded) IcChevronUp(tint = Color.White) else IcChevronDown(tint = dynamicTint)
             }
         )
         CookieboxMenu(
