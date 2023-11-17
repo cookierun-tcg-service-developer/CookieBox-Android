@@ -8,5 +8,4 @@ android {
 
 dependencies {
     "implementation"(libs.findLibrary("libraries.coil").get())
-    "implementation"(libs.findLibrary("libraries-bottomsheetdialog-compose").get())
 }

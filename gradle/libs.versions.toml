@@ -26,8 +26,6 @@ retrofit = "2.9.0"
 okhttp = "4.10.0"
 coil = "2.4.0"
 
-bottomsheetdialog-compose = "1.0.2"
-
 [libraries]
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -61,7 +59,6 @@ libraries-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "
 libraries-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp"}
 libraries-okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 libraries-coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
-libraries-bottomsheetdialog-compose = { group = "com.holix.android", name = "bottomsheetdialog-compose", version.ref = "bottomsheetdialog-compose" }
 
 [plugins]
 application = { id = "com.android.application", version.ref = "gradle" }
