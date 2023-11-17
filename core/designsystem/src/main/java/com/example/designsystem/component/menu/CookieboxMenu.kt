@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.ExposedDropdownMenuBoxScope
@@ -26,13 +27,13 @@ fun ExposedDropdownMenuBoxScope.CookieboxMenu(
     onItemClicked: (String) -> Unit,
 ) {
     MaterialTheme(
-        shapes = MaterialTheme.shapes.copy(medium = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp)),
+        shapes = MaterialTheme.shapes.copy(medium = RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp)),
     ) {
         ExposedDropdownMenu(
             modifier = Modifier
                 .background(
                     color = CookieboxTheme.color.grayscale80,
-                    shape = RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp),
+                    shape = RoundedCornerShape(topStart = 8.dp, topEnd = 8.dp),
                 )
                 .heightIn(max = menuMaxHeight),
             expanded = expanded,
@@ -54,5 +55,6 @@ fun ExposedDropdownMenuBoxScope.CookieboxMenu(
                 }
             }
         }
+        if (expanded) Divider(color = CookieboxTheme.color.grayscale40, thickness = 2.dp)
     }
 }

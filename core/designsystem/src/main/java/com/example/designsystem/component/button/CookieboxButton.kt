@@ -14,6 +14,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
@@ -25,6 +26,7 @@ import com.example.designsystem.theme.CookieboxTheme
 @OptIn(ExperimentalTextApi::class)
 @Composable
 fun CookieboxButton(
+    modifier: Modifier = Modifier,
     text: String,
     useTextGradient: Boolean = true,
     buttonType: ButtonType = ButtonType.Primary,
@@ -41,6 +43,7 @@ fun CookieboxButton(
     val gradientBrush = Brush.verticalGradient(gradientColors)
 
     Button(
+        modifier = modifier,
         enabled = enabled,
         interactionSource = interactionSource,
         shape = shape,
