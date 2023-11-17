@@ -19,6 +19,7 @@ fun CookieboxSegmentedButton(
     modifier: Modifier = Modifier,
     items: List<String>,
     contentPadding: PaddingValues = PaddingValues(vertical = 11.dp),
+    onItemClick: (String) -> Unit,
 ) {
     val checkedList = remember { mutableStateListOf<Int>() }
 
@@ -37,9 +38,10 @@ fun CookieboxSegmentedButton(
                     backgroundColor = if (index in checkedList) backgroundColor else CookieboxTheme.color.grayscale5,
                     contentColor = if (index in checkedList) Color.White else CookieboxTheme.color.grayscale40
                 ),
-                contentPadding = contentPadding
+                contentPadding = contentPadding,
             ) {
                 if (index in checkedList) checkedList.remove(index) else checkedList.add(index)
+                onItemClick(item)
             }
         }
     }
@@ -59,10 +61,12 @@ fun backgroundColor(item: String): Color {
 @Composable
 fun PreviewCookieboxSegmentedButton() {
     Column {
-        CookieboxSegmentedButton(items = listOf("쿠키", "트랩", "아이템", "스테이지"))
+        CookieboxSegmentedButton(items = listOf("쿠키", "트랩", "아이템", "스테이지")) { }
         CookieboxSegmentedButton(
             items = listOf("레드", "옐로", "그린"),
             contentPadding = PaddingValues(horizontal = 37.5.dp, vertical = 11.dp)
-        )
+        ) {
+
+        }
     }
 }
