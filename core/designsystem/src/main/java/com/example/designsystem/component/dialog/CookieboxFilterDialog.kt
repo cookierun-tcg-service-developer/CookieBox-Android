@@ -209,7 +209,7 @@ private fun generateOptions(prefix: String): String {
 
 @Preview
 @Composable
-fun PreviewCookieboxFilterDialog() {
+private fun PreviewCookieboxFilterDialog() {
     val values = remember { mutableStateListOf("시작 LV", "끝 LV", "시작 HP", "끝 HP") }
     val expandedStates = remember { mutableStateListOf(false, false, false, false) }
 

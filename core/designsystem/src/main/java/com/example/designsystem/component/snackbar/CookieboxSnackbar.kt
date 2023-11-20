@@ -31,7 +31,7 @@ fun CookieboxSnackbar(
 
 @Preview
 @Composable
-fun CookieboxSnackbarPreview() {
+private fun CookieboxSnackbarPreview() {
     CookieboxSnackbar(
         text = "카드의 효과를 복사했습니다.",
     )

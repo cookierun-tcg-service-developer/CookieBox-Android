@@ -67,7 +67,7 @@ fun CookieboxButton(
 }
 
 @Composable
-fun buttonColors(buttonType: ButtonType, isPressed: Boolean): ButtonColors {
+private fun buttonColors(buttonType: ButtonType, isPressed: Boolean): ButtonColors {
     return when (buttonType) {
         ButtonType.Primary -> ButtonDefaults.buttonColors(
             backgroundColor = if (isPressed) CookieboxTheme.color.brown90 else CookieboxTheme.color.brown80,
@@ -93,7 +93,7 @@ fun buttonColors(buttonType: ButtonType, isPressed: Boolean): ButtonColors {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
-fun PreviewCookieboxButton() {
+private fun PreviewCookieboxButton() {
     Row {
         Column {
             CookieboxButton(text = "Button", buttonType = ButtonType.Primary) { }
