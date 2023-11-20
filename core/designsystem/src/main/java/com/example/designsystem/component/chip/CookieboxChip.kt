@@ -1,6 +1,7 @@
 package com.example.designsystem.component.chip
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,7 +45,12 @@ fun CookieboxChip(
     Box(
         modifier = Modifier
             .background(
-                color = CookieboxTheme.color.cardTypeChip,
+                color = chipBackgroundColor(cardType = cardType),
+                shape = RoundedCornerShape(13.dp)
+            )
+            .border(
+                width = 1.dp,
+                color = if (cardType == CardType.Stage) Color.Black else Color.Transparent,
                 shape = RoundedCornerShape(13.dp)
             )
             .padding(horizontal = 15.5.dp, vertical = 3.dp),
@@ -53,7 +59,7 @@ fun CookieboxChip(
         Text(
             text = cardType.text,
             style = CookieboxTheme.typography.captionR,
-            color = Color.White,
+            color = chipTextColor(cardType = cardType),
         )
     }
 }
@@ -64,6 +70,25 @@ private fun chipBackgroundColor(cardColor: CardColor): Color {
         CardColor.Red -> CookieboxTheme.color.red50
         CardColor.Yellow -> CookieboxTheme.color.yellow50
         CardColor.Green -> CookieboxTheme.color.green60
+    }
+}
+
+@Composable
+private fun chipBackgroundColor(cardType: CardType): Color {
+    return when (cardType) {
+        CardType.Cookie -> CookieboxTheme.color.chipBrown
+        CardType.Trap -> CookieboxTheme.color.grayscale80
+        CardType.Item -> CookieboxTheme.color.chipBlue
+        CardType.Stage -> Color.White
+    }
+}
+
+@Composable
+private fun chipTextColor(cardType: CardType): Color {
+    return when (cardType) {
+        CardType.Cookie, CardType.Item -> Color.White
+        CardType.Trap -> CookieboxTheme.color.orange40
+        CardType.Stage -> Color.Black
     }
 }
 
