@@ -44,7 +44,7 @@ fun CookieboxChip(
     Box(
         modifier = Modifier
             .background(
-                color = CookieboxTheme.color.cardTypeChip,
+                color = chipBackgroundColor(cardType = cardType),
                 shape = RoundedCornerShape(13.dp)
             )
             .padding(horizontal = 15.5.dp, vertical = 3.dp),
@@ -64,6 +64,16 @@ private fun chipBackgroundColor(cardColor: CardColor): Color {
         CardColor.Red -> CookieboxTheme.color.red50
         CardColor.Yellow -> CookieboxTheme.color.yellow50
         CardColor.Green -> CookieboxTheme.color.green60
+    }
+}
+
+@Composable
+private fun chipBackgroundColor(cardType: CardType): Color {
+    return when (cardType) {
+        CardType.Cookie -> CookieboxTheme.color.chipBrown
+        CardType.Trap -> CookieboxTheme.color.grayscale80
+        CardType.Item -> CookieboxTheme.color.chipBlue
+        CardType.Stage -> Color.White
     }
 }
 
