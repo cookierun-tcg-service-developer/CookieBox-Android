@@ -1,10 +1,6 @@
 package com.example.designsystem.component.card_item
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.combinedClickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,11 +27,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.designsystem.R
+import com.example.designsystem.component.modifier.cookieboxClickable
+import com.example.designsystem.component.modifier.cookieboxCombinedClickable
 import com.example.designsystem.icon.IcMinus
 import com.example.designsystem.icon.IcPlus
 import com.example.designsystem.theme.CookieboxTheme
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun CookieboxCardItem(
     imageUrl: String,
@@ -47,9 +44,7 @@ fun CookieboxCardItem(
     Card(
         modifier = Modifier
             .size(width = 104.dp, height = 144.dp)
-            .combinedClickable(
-                indication = null,
-                interactionSource = remember { MutableInteractionSource() },
+            .cookieboxCombinedClickable(
                 onClick = {
                     if (count == 0) onPlusClick()
                 },
@@ -82,11 +77,7 @@ fun CookieboxCardItem(
                     IcPlus(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable(
-                                indication = null,
-                                interactionSource = remember { MutableInteractionSource() },
-                                onClick = onPlusClick
-                            ),
+                            .cookieboxClickable(onClick = onPlusClick),
                         tint = Color.White
                     )
                     CookieboxCountBadge(
@@ -96,11 +87,7 @@ fun CookieboxCardItem(
                     IcMinus(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable(
-                                indication = null,
-                                interactionSource = remember { MutableInteractionSource() },
-                                onClick = onMinusClick
-                            ),
+                            .cookieboxClickable(onClick = onMinusClick),
                         tint = Color.White
                     )
                 }

@@ -1,8 +1,6 @@
 package com.example.designsystem.component.dialog
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -29,6 +27,7 @@ import com.example.designsystem.component.button.ButtonType
 import com.example.designsystem.component.button.CookieboxButton
 import com.example.designsystem.component.button.CookieboxSegmentedButton
 import com.example.designsystem.component.menu.CookieboxMenuBox
+import com.example.designsystem.component.modifier.cookieboxClickable
 import com.example.designsystem.icon.IcCross
 import com.example.designsystem.theme.CookieboxTheme
 
@@ -65,11 +64,7 @@ fun CookieboxFilterDialog(
                 color = Color.Black
             )
             IcCross(
-                modifier = Modifier.clickable(
-                    indication = null,
-                    interactionSource = remember { MutableInteractionSource() },
-                    onClick = onDismissRequest
-                )
+                modifier = Modifier.cookieboxClickable(onClick = onDismissRequest),
             )
         }
 
