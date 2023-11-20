@@ -85,7 +85,7 @@ fun CookieboxTextField(
 
 @Preview
 @Composable
-fun PreviewCookieboxTextField() {
+private fun PreviewCookieboxTextField() {
     var text by remember { mutableStateOf("") }
 
     CookieboxTextField(

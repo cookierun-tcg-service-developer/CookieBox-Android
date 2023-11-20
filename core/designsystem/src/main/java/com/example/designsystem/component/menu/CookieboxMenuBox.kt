@@ -74,7 +74,7 @@ fun CookieboxMenuBox(
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
-fun PreviewCookieboxMenu() {
+private fun PreviewCookieboxMenu() {
     var startLevelExpanded by remember { mutableStateOf(false) }
     var endLevelExpanded by remember { mutableStateOf(false) }
 

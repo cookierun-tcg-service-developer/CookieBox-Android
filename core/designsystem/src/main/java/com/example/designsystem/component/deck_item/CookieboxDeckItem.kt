@@ -91,7 +91,7 @@ fun CookieboxDeckItem(
    }
 }
 
-fun deckItemSize(deckItemType: DeckItemType): DpSize {
+private fun deckItemSize(deckItemType: DeckItemType): DpSize {
     return when(deckItemType) {
         DeckItemType.BottomSheet -> DpSize(48.dp, 66.dp)
         DeckItemType.Detail -> DpSize(104.dp, 144.dp)
@@ -100,7 +100,7 @@ fun deckItemSize(deckItemType: DeckItemType): DpSize {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFF)
 @Composable
-fun CookieboxDeckItemPreview() {
+private fun CookieboxDeckItemPreview() {
     Row {
         CookieboxDeckItem(
             deckItemType = DeckItemType.BottomSheet,

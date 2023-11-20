@@ -19,7 +19,7 @@ import com.example.designsystem.theme.CookieboxTheme
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ExposedDropdownMenuBoxScope.CookieboxMenu(
+internal fun ExposedDropdownMenuBoxScope.CookieboxMenu(
     items: List<String>,
     menuMaxHeight: Dp,
     expanded: Boolean,

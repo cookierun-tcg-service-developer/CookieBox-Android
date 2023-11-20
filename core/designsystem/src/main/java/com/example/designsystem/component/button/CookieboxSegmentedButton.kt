@@ -48,7 +48,7 @@ fun CookieboxSegmentedButton(
 }
 
 @Composable
-fun backgroundColor(item: String): Color {
+private fun backgroundColor(item: String): Color {
     return when (item) {
         "레드" -> CookieboxTheme.color.red50
         "옐로" -> CookieboxTheme.color.yellow50
@@ -59,7 +59,7 @@ fun backgroundColor(item: String): Color {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
-fun PreviewCookieboxSegmentedButton() {
+private fun PreviewCookieboxSegmentedButton() {
     Column {
         CookieboxSegmentedButton(items = listOf("쿠키", "트랩", "아이템", "스테이지")) { }
         CookieboxSegmentedButton(

@@ -117,7 +117,7 @@ fun CookieboxDeckBottomSheetContent(
 @OptIn(ExperimentalMaterialApi::class)
 @Preview
 @Composable
-fun CookieboxDeckBottomSheetPreview() {
+private fun CookieboxDeckBottomSheetPreview() {
     val scaffoldState = rememberBottomSheetScaffoldState(
         bottomSheetState = rememberBottomSheetState(initialValue = BottomSheetValue.Collapsed)
     )
@@ -149,7 +149,7 @@ fun CookieboxDeckBottomSheetPreview() {
 
 @Preview
 @Composable
-fun CookieboxDeckBottomSheetContentPreview() {
+private fun CookieboxDeckBottomSheetContentPreview() {
     CookieboxDeckBottomSheetContent(
         imageUrl = "",
         count = 4,

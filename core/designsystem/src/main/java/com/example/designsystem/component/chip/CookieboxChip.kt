@@ -59,7 +59,7 @@ fun CookieboxChip(
 }
 
 @Composable
-fun chipBackgroundColor(cardColor: CardColor): Color {
+private fun chipBackgroundColor(cardColor: CardColor): Color {
     return when (cardColor) {
         CardColor.Red -> CookieboxTheme.color.red50
         CardColor.Yellow -> CookieboxTheme.color.yellow50
@@ -69,7 +69,7 @@ fun chipBackgroundColor(cardColor: CardColor): Color {
 
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
-fun PreviewCookieboxChip() {
+private fun PreviewCookieboxChip() {
     Row {
         Column(verticalArrangement = Arrangement.spacedBy(1.dp)) {
             CookieboxChip(cardColor = CardColor.Red)

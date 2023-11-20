@@ -133,7 +133,7 @@ fun CookieboxCountBadge(
 
 @Preview
 @Composable
-fun PreviewCookieboxCardItem() {
+private fun PreviewCookieboxCardItem() {
     var count by remember { mutableStateOf(0) }
 
     CookieboxCardItem(

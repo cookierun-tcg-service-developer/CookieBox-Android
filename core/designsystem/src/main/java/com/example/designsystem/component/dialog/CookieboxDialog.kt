@@ -248,7 +248,7 @@ fun CookieBoxDeleteDialog(
 
 @Preview
 @Composable
-fun CookieBoxDialogPreview() {
+private fun CookieBoxDialogPreview() {
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
