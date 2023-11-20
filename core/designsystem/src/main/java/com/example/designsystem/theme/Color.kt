@@ -74,6 +74,7 @@ val Orange80 = Color(0xFF493003)
 val Orange90 = Color(0xFF181001)
 
 val ChipBrown = Color(0xFF955A40)
+val ChipBlue = Color(0xFF0090FF)
 
 // TODO: 네이밍 변경하기
 val CardMinus = Color(0xFFF20D0D)
