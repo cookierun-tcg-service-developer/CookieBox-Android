@@ -1,8 +1,6 @@
 package com.example.designsystem.component.dialog
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,7 +14,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -34,6 +31,7 @@ import com.example.designsystem.component.button.CookieboxButton
 import com.example.designsystem.component.chip.CardColor
 import com.example.designsystem.component.chip.CardType
 import com.example.designsystem.component.chip.CookieboxChip
+import com.example.designsystem.component.modifier.cookieboxClickable
 import com.example.designsystem.icon.IcCross
 import com.example.designsystem.theme.CookieboxTheme
 
@@ -220,10 +218,8 @@ fun CookieBoxDeleteDialog(
                 Text(
                     modifier = Modifier
                         .padding(horizontal = 20.dp, vertical = 10.dp)
-                        .clickable(
-                            interactionSource = remember { MutableInteractionSource() },
-                            indication = null,
-                            onClick = onDismissRequest
+                        .cookieboxClickable(
+                            onClick = onDismissRequest,
                         ),
                     text = "취소",
                     style = CookieboxTheme.typography.textMediumR,
@@ -232,10 +228,8 @@ fun CookieBoxDeleteDialog(
                 Text(
                     modifier = Modifier
                         .padding(horizontal = 20.dp, vertical = 10.dp)
-                        .clickable(
-                            interactionSource = remember { MutableInteractionSource() },
-                            indication = null,
-                            onClick = onCardDelete
+                        .cookieboxClickable(
+                            onClick = onCardDelete,
                         ),
                     text = "삭제",
                     style = CookieboxTheme.typography.textMediumR,
