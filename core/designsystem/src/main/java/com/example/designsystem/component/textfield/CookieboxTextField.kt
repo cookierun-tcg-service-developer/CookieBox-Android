@@ -27,6 +27,7 @@ import com.example.designsystem.theme.CookieboxTheme
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun CookieboxTextField(
+    modifier: Modifier = Modifier,
     value: String,
     hint: String,
     enabled: Boolean = true,
@@ -44,7 +45,7 @@ fun CookieboxTextField(
     val coloredStyle = textStyle.copy(color = Color.Black)
 
     BasicTextField(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .background(color = CookieboxTheme.color.grayscale5, shape = RoundedCornerShape(21.dp)),
         value = value,
