@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -41,12 +42,14 @@ fun CookieboxDeckListItem(
         Box(modifier = Modifier.size(160.dp, 220.dp)) {
             AsyncImage(
                 modifier = Modifier
+                    .fillMaxSize()
                     .cookieboxCombinedClickable(
                         onClick = onCardClick,
                         onLongClick = onCardLongClick,
                     ),
                 model = imageUrl,
                 contentDescription = "cookieImage",
+                contentScale = ContentScale.Crop,
                 colorFilter = if (isChecked) {
                     ColorFilter.tint(
                         color = CookieboxTheme.color.cardDarkFilter,
@@ -55,13 +58,10 @@ fun CookieboxDeckListItem(
                 } else null
             )
             if (isChecked) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    IcCheckMark(tint = Color.Black)
-                }
+                IcCheckMark(
+                    modifier = Modifier.align(Alignment.Center),
+                    tint = Color.Black
+                )
             }
         }
         Text(
