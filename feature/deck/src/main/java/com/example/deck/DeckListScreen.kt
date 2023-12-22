@@ -47,17 +47,33 @@ fun DeckListScreen() {
             Column(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(2.dp)
             ) {
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(6.dp))
                 Text(
-                    text = "아클레어 컨트롤",
-                    style = CookieboxTheme.typography.textSmallR,
-                    color = CookieboxTheme.color.red50,
-                )
-                Text(
-                    text = "을 삭제하면 되돌릴 수 없어요",
+                    text = "삭제하시려는 덱은",
                     style = CookieboxTheme.typography.textSmallR,
                     color = CookieboxTheme.color.grayscale40,
+                )
+                Text(
+                    text = "아클레어 컨트롤",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "딸기크레페 부스팅 2",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "커피트럭",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "씬키스드 개조",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
                 )
             }
         }
@@ -89,7 +105,7 @@ fun DeckListScreen() {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = "덱 리스트",
+                text = if (!isChecked) "덱 리스트" else "덱 삭제하기",
                 style = CookieboxTheme.typography.titleMediumB,
                 color = Color.Black,
             )
@@ -122,22 +138,17 @@ fun DeckListScreen() {
             IcFilter(tint = CookieboxTheme.color.grayscale40)
         }
 
-        val testList = mutableListOf(false, false, false, false, false, false, false)
-
         LazyVerticalGrid(
             modifier = Modifier.padding(bottom = 16.dp),
             columns = GridCells.Fixed(2),
         ) {
-            items(testList.size) {
+            items(7) {
                 CookieboxDeckListItem(
                     imageUrl = "",
                     deckName = "에클레어 컨트롤",
-                    isChecked = testList[it],
+                    isChecked = isChecked,
                     onCardClick = {},
-                    onCardLongClick = {
-                        testList[it] = !testList[it]
-                        isChecked = true
-                    }
+                    onCardLongClick = { isChecked = !isChecked }
                 )
             }
         }
