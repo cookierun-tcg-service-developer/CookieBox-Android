@@ -2,6 +2,7 @@ package com.example.deck
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,23 +21,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.designsystem.component.button.ButtonType
 import com.example.designsystem.component.button.CookieboxButton
-import com.example.designsystem.component.deck_item.CookieboxDeckListItem
+import com.example.designsystem.component.deck_item.CookieboxDeckItem
+import com.example.designsystem.component.deck_item.DeckItemType
 import com.example.designsystem.component.dialog.CookieBoxDeleteDialog
-import com.example.designsystem.component.textfield.CookieboxTextField
 import com.example.designsystem.icon.IcChevronLeft
-import com.example.designsystem.icon.IcFilter
-import com.example.designsystem.icon.IcSearch
+import com.example.designsystem.icon.IcLink
 import com.example.designsystem.theme.CookieboxTheme
 
 @Composable
-fun CookieDeckList() {
-    var text by remember { mutableStateOf("") }
-    var isChecked by remember { mutableStateOf(false) }
+fun DeckDetailScreen() {
     var isShowDialog by remember { mutableStateOf(false) }
 
     if (isShowDialog) {
@@ -85,60 +84,72 @@ fun CookieDeckList() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(top = 10.dp, bottom = 16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = "덱 리스트",
+                text = "에클레어 컨트롤",
                 style = CookieboxTheme.typography.titleMediumB,
                 color = Color.Black,
             )
-            if (isChecked) CookieboxButton(text = "선택 삭제", buttonType = ButtonType.Primary) { isShowDialog = true }
-        }
-
-        CookieboxTextField(
-            value = text,
-            hint = "덱 이름으로 검색",
-            onValueChange = { text = it },
-            trailingIcon = { IcSearch() }
-        )
-
-        Row(
-            modifier = Modifier.padding(vertical = 16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text(
-                text = "검색 결과",
-                style = CookieboxTheme.typography.textMediumR,
-                color = Color.Black,
-            )
-            Text(
-                modifier = Modifier.padding(start = 8.dp),
-                text = "덱을 길게 눌러 선택하기",
-                style = CookieboxTheme.typography.captionR,
-                color = CookieboxTheme.color.grayscale40,
-            )
             Spacer(modifier = Modifier.weight(1f))
-            IcFilter(tint = CookieboxTheme.color.grayscale40)
+            IcLink(
+                modifier = Modifier.size(20.dp),
+                tint = CookieboxTheme.color.chipBlue
+            )
+            Text(
+                text = "공유",
+                style = CookieboxTheme.typography.textSmallR,
+                color = CookieboxTheme.color.chipBlue,
+            )
         }
 
-        val testList = mutableListOf(false, false, false, false, false, false, false)
+        Box {
+            LazyVerticalGrid(
+                modifier = Modifier.padding(bottom = 16.dp),
+                columns = GridCells.Fixed(3),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                items(20) {
+                    CookieboxDeckItem(
+                        modifier = Modifier.padding(bottom = if (it == 19) 88.dp else 0.dp),
+                        deckItemType = DeckItemType.Detail,
+                        imageUrl = "",
+                        count = it + 1,
+                    ) {}
+                }
+            }
 
-        LazyVerticalGrid(
-            modifier = Modifier.padding(bottom = 16.dp),
-            columns = GridCells.Fixed(2),
-        ) {
-            items(testList.size) {
-                CookieboxDeckListItem(
-                    imageUrl = "",
-                    deckName = "에클레어 컨트롤",
-                    isChecked = testList[it],
-                    onCardClick = {},
-                    onCardLongClick = {
-                        testList[it] = !testList[it]
-                        isChecked = true
-                    }
-                )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(88.dp)
+                    .background(
+                        Brush.verticalGradient(
+                            listOf(
+                                Color.Transparent,
+                                Color.White,
+                            )
+                        )
+                    )
+                    .align(Alignment.BottomCenter),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                CookieboxButton(
+                    modifier = Modifier
+                        .weight(0.5f)
+                        .height(50.dp),
+                    text = "덱 수정",
+                    buttonType = ButtonType.Primary
+                ) { }
+                CookieboxButton(
+                    modifier = Modifier
+                        .weight(0.5f)
+                        .height(50.dp),
+                    text = "덱 삭제",
+                    buttonType = ButtonType.Primary
+                ) { isShowDialog = true }
             }
         }
     }
@@ -146,6 +157,6 @@ fun CookieDeckList() {
 
 @Preview
 @Composable
-fun DeckListPreview() {
-    CookieDeckList()
+fun DeckDetailScreenPreview() {
+    DeckDetailScreen()
 }
