@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -109,10 +110,10 @@ fun DeckDetailScreen() {
                 columns = GridCells.Fixed(3),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp),
+                contentPadding = PaddingValues(bottom = 80.dp),
             ) {
                 items(20) {
                     CookieboxDeckItem(
-                        modifier = Modifier.padding(bottom = if (it == 19) 88.dp else 0.dp),
                         deckItemType = DeckItemType.Detail,
                         imageUrl = "",
                         count = it + 1,
@@ -137,18 +138,16 @@ fun DeckDetailScreen() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 CookieboxButton(
-                    modifier = Modifier
-                        .weight(0.5f)
-                        .height(50.dp),
+                    modifier = Modifier.weight(0.5f),
                     text = "덱 수정",
-                    buttonType = ButtonType.Primary
+                    buttonType = ButtonType.Primary,
+                    contentPadding = PaddingValues(vertical = 11.dp),
                 ) { }
                 CookieboxButton(
-                    modifier = Modifier
-                        .weight(0.5f)
-                        .height(50.dp),
+                    modifier = Modifier.weight(0.5f),
                     text = "덱 삭제",
-                    buttonType = ButtonType.Primary
+                    buttonType = ButtonType.Primary,
+                    contentPadding = PaddingValues(vertical = 11.dp),
                 ) { isShowDialog = true }
             }
         }
