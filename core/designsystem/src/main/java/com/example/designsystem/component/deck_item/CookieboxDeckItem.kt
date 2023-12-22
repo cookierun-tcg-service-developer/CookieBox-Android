@@ -67,7 +67,7 @@ fun CookieboxDeckItem(
                     Brush.verticalGradient(
                         listOf(
                             Color.Transparent,
-                            Color.Black,
+                            Color(0xCC000000)
                         )
                     )
                 )
