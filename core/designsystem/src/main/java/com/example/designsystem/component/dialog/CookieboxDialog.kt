@@ -246,27 +246,27 @@ private fun CookieBoxDialogPreview() {
     Column(
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        CookieBoxDialog(
-            cookieName = "명량한 쿠키",
-            cookieLevel = 2,
-            cookieHp = 4,
-            imageUrl = "",
-            cardType = CardType.Cookie,
-            cardColor = CardColor.Yellow,
-            skills = listOf(
-                "1데미지를 준다",
-                "3데미지를 준다",
-                "3데미지를 준다. 그리고 자신의 브레이크 에리어에 있는 LV.1의 카드를 한 장까지 선택한다. 그 카드를 트래시에 놓는다.",
-            ),
-            skillCost = listOf(
-                "<믹스2>",
-                "<옐로3><믹스1>",
-                "<옐로2><믹스2>",
-            ),
-            onTextCopy = {},
-            onCardSave = {},
-            onDismissRequest = {},
-        )
+//        CookieBoxDialog(
+//            cookieName = "명량한 쿠키",
+//            cookieLevel = 2,
+//            cookieHp = 4,
+//            imageUrl = "",
+//            cardType = CardType.Cookie,
+//            cardColor = CardColor.Yellow,
+//            skills = listOf(
+//                "1데미지를 준다",
+//                "3데미지를 준다",
+//                "3데미지를 준다. 그리고 자신의 브레이크 에리어에 있는 LV.1의 카드를 한 장까지 선택한다. 그 카드를 트래시에 놓는다.",
+//            ),
+//            skillCost = listOf(
+//                "<믹스2>",
+//                "<옐로3><믹스1>",
+//                "<옐로2><믹스2>",
+//            ),
+//            onTextCopy = {},
+//            onCardSave = {},
+//            onDismissRequest = {},
+//        )
 
 //        CookieBoxDeleteDialog(
 //            onDismissRequest = { /*TODO*/ },
@@ -289,5 +289,43 @@ private fun CookieBoxDialogPreview() {
 //                )
 //            }
 //        }
+
+        CookieBoxDeleteDialog(
+            onDismissRequest = { /*TODO*/ },
+            onCardDelete = {},
+        ) {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text = "삭제하시려는 덱은",
+                    style = CookieboxTheme.typography.textSmallR,
+                    color = CookieboxTheme.color.grayscale40,
+                )
+                Text(
+                    text = "아클레어 컨트롤",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "딸기크레페 부스팅 2",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "커피트럭",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+                Text(
+                    text = "씬키스드 개조",
+                    style = CookieboxTheme.typography.captionR,
+                    color = CookieboxTheme.color.orange40,
+                )
+            }
+        }
     }
 }

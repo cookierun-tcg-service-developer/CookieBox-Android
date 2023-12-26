@@ -40,6 +40,13 @@ fun CookieboxDeckListItem(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Box(modifier = Modifier.size(160.dp, 220.dp)) {
+            if (isChecked) {
+                IcCheckMark(
+                    modifier = Modifier.align(Alignment.Center),
+                    tint = Color.Black
+                )
+            }
+
             AsyncImage(
                 modifier = Modifier
                     .fillMaxSize()
@@ -57,12 +64,6 @@ fun CookieboxDeckListItem(
                     )
                 } else null
             )
-            if (isChecked) {
-                IcCheckMark(
-                    modifier = Modifier.align(Alignment.Center),
-                    tint = Color.Black
-                )
-            }
         }
         Text(
             text = deckName,
