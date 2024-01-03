@@ -42,7 +42,9 @@ import com.example.designsystem.theme.CookieboxTheme
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun CardScreen() {
+fun CardScreen(
+    navigateToDeckList: () -> Unit
+) {
     var text by remember { mutableStateOf("") }
     var deckName by remember { mutableStateOf("카드 리스트") }
     var showFilter by remember { mutableStateOf(false) }
@@ -94,7 +96,7 @@ fun CardScreen() {
                 .padding(top = 28.dp, start = 16.dp, end = 16.dp)
         ) {
             Text(
-                modifier = Modifier.cookieboxClickable { /* TODO: Navigate to deck list */ },
+                modifier = Modifier.cookieboxClickable { navigateToDeckList() },
                 text = "덱 리스트 >",
                 style = CookieboxTheme.typography.textMediumR,
                 color = CookieboxTheme.color.chipBlue,
@@ -170,5 +172,7 @@ fun CardScreen() {
 @Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun CardScreenPreview() {
-    CardScreen()
+    CardScreen(
+        navigateToDeckList = {},
+    )
 }
