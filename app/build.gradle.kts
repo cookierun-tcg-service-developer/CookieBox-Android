@@ -18,7 +18,6 @@ android {
     }
 }
 
-// TODO: feature module 및 navigation module 추가
 dependencies {
     implementation(project(":feature:card"))
     implementation(project(":feature:deck"))
