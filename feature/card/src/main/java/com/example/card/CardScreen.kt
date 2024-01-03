@@ -43,7 +43,7 @@ import com.example.designsystem.theme.CookieboxTheme
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun CardScreen(
-    navigateToDeckList: () -> Unit
+    navigateToDeckList: () -> Unit,
 ) {
     var text by remember { mutableStateOf("") }
     var deckName by remember { mutableStateOf("카드 리스트") }
