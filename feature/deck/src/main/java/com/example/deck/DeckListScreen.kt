@@ -167,6 +167,6 @@ fun DeckListScreen(
 fun DeckListScreenPreview() {
     DeckListScreen(
         navigateToCard = {},
-        navigateToDeckDetail = {}
+        navigateToDeckDetail = {},
     )
 }
