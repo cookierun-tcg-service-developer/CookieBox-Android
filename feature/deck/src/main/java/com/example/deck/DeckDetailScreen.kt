@@ -31,18 +31,25 @@ import com.example.designsystem.component.button.CookieboxButton
 import com.example.designsystem.component.deck_item.CookieboxDeckItem
 import com.example.designsystem.component.deck_item.DeckItemType
 import com.example.designsystem.component.dialog.CookieBoxDeleteDialog
+import com.example.designsystem.component.modifier.cookieboxClickable
 import com.example.designsystem.icon.IcChevronLeft
 import com.example.designsystem.icon.IcLink
 import com.example.designsystem.theme.CookieboxTheme
 
 @Composable
-fun DeckDetailScreen() {
+fun DeckDetailScreen(
+    navigateToCard: () -> Unit,
+    navigateToDeckList: () -> Unit,
+) {
     var isShowDialog by remember { mutableStateOf(false) }
 
     if (isShowDialog) {
         CookieBoxDeleteDialog(
             onDismissRequest = { isShowDialog = false },
-            onCardDelete = { isShowDialog = false },
+            onCardDelete = {
+                isShowDialog = false
+                navigateToDeckList()
+            },
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth(),
@@ -69,7 +76,10 @@ fun DeckDetailScreen() {
             .background(Color.White)
             .padding(top = 30.dp, start = 16.dp, end = 16.dp),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier.cookieboxClickable { navigateToCard() },
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             IcChevronLeft(
                 modifier = Modifier.size(20.dp),
                 tint = CookieboxTheme.color.chipBlue
@@ -142,7 +152,7 @@ fun DeckDetailScreen() {
                     text = "덱 수정",
                     buttonType = ButtonType.Primary,
                     contentPadding = PaddingValues(vertical = 11.dp),
-                ) { }
+                ) { navigateToCard() }
                 CookieboxButton(
                     modifier = Modifier.weight(0.5f),
                     text = "덱 삭제",
@@ -157,5 +167,8 @@ fun DeckDetailScreen() {
 @Preview
 @Composable
 fun DeckDetailScreenPreview() {
-    DeckDetailScreen()
+    DeckDetailScreen(
+        navigateToCard = {},
+        navigateToDeckList = {},
+    )
 }

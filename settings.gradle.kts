@@ -22,7 +22,6 @@ include(
     ":core:domain",
     ":core:model",
     ":core:ui",
-    ":core:navigation",
     ":core:designsystem",
 
     ":feature:deck",

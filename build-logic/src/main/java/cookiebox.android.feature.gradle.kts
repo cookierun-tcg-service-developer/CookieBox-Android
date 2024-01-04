@@ -12,7 +12,6 @@ dependencies {
     "implementation"(project(":core:model"))
     "implementation"(project(":core:domain"))
     "implementation"(project(":core:ui"))
-    "implementation"(project(":core:navigation"))
     "implementation"(project(":core:designsystem"))
 
     "implementation"(libs.findLibrary("androidx.core").get())

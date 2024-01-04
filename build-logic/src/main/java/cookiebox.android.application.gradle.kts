@@ -19,8 +19,6 @@ android {
 configureHiltAndroid()
 
 dependencies {
-    "implementation"(project(":core:navigation"))
-
     "implementation"(libs.findLibrary("androidx.core").get())
     "implementation"(libs.findLibrary("androidx.appcompat").get())
     "implementation"(libs.findLibrary("androidx.navigation").get())

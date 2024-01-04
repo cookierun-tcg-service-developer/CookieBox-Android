@@ -26,6 +26,7 @@ import com.example.designsystem.component.button.ButtonType
 import com.example.designsystem.component.button.CookieboxButton
 import com.example.designsystem.component.deck_item.CookieboxDeckListItem
 import com.example.designsystem.component.dialog.CookieBoxDeleteDialog
+import com.example.designsystem.component.modifier.cookieboxClickable
 import com.example.designsystem.component.textfield.CookieboxTextField
 import com.example.designsystem.icon.IcChevronLeft
 import com.example.designsystem.icon.IcFilter
@@ -33,7 +34,10 @@ import com.example.designsystem.icon.IcSearch
 import com.example.designsystem.theme.CookieboxTheme
 
 @Composable
-fun DeckListScreen() {
+fun DeckListScreen(
+    navigateToCard: () -> Unit,
+    navigateToDeckDetail: () -> Unit,
+) {
     var text by remember { mutableStateOf("") }
     var isChecked by remember { mutableStateOf(false) }
     var isShowDialog by remember { mutableStateOf(false) }
@@ -85,7 +89,10 @@ fun DeckListScreen() {
             .background(Color.White)
             .padding(top = 30.dp, start = 16.dp, end = 16.dp),
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            modifier = Modifier.cookieboxClickable { navigateToCard() },
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             IcChevronLeft(
                 modifier = Modifier.size(20.dp),
                 tint = CookieboxTheme.color.chipBlue
@@ -147,7 +154,7 @@ fun DeckListScreen() {
                     imageUrl = "",
                     deckName = "에클레어 컨트롤",
                     isChecked = isChecked,
-                    onCardClick = {},
+                    onCardClick = { navigateToDeckDetail() },
                     onCardLongClick = { isChecked = !isChecked }
                 )
             }
@@ -158,5 +165,8 @@ fun DeckListScreen() {
 @Preview
 @Composable
 fun DeckListScreenPreview() {
-    DeckListScreen()
+    DeckListScreen(
+        navigateToCard = {},
+        navigateToDeckDetail = {},
+    )
 }
