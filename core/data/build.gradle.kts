@@ -17,4 +17,7 @@ dependencies {
     implementation(libs.libraries.okhttp)
     implementation(libs.libraries.okhttp.logging.interceptor)
 
+    implementation(libs.libraries.moshi.converter)
+    implementation(libs.libraries.moshi)
+    ksp(libs.libraries.moshi.codegen)
 }
