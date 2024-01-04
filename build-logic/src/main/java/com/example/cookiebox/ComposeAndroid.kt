@@ -10,8 +10,7 @@ internal fun Project.configureComposeAndroid(commonExtension: CommonExtension<*,
             compose = true
         }
         composeOptions {
-            // TODO: versionCatalog 에서 compiler version 관리
-            kotlinCompilerExtensionVersion = "1.4.3"
+            kotlinCompilerExtensionVersion = libs.findVersion("compose-compiler").get().toString()
         }
 
         dependencies {
