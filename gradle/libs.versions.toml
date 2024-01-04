@@ -21,7 +21,6 @@ compose-material = "1.2.0"
 
 google-material = "1.5.0"
 hilt = "2.48"
-gson = "2.8.9"
 
 retrofit = "2.9.0"
 okhttp = "4.10.0"
@@ -54,7 +53,6 @@ compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.
 google-material = { group = "com.google.android.material", name = "material", version.ref = "google-material" }
 google-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 google-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 
 libraries-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 libraries-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp"}
