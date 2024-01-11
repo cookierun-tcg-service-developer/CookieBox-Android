@@ -122,7 +122,7 @@ fun DeckListScreen(
                 modifier = Modifier.alpha(if (isChecked) 1f else 0f),
                 text = "선택 삭제",
                 buttonType = ButtonType.Primary
-            ) { isShowDialog = true }
+            ) { if (isChecked) isShowDialog = true }
         }
 
         CookieboxTextField(
