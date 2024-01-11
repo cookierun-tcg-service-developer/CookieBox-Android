@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -116,7 +117,12 @@ fun DeckListScreen(
                 style = CookieboxTheme.typography.titleMediumB,
                 color = Color.Black,
             )
-            if (isChecked) CookieboxButton(text = "선택 삭제", buttonType = ButtonType.Primary) { isShowDialog = true }
+
+            CookieboxButton(
+                modifier = Modifier.alpha(if (isChecked) 1f else 0f),
+                text = "선택 삭제",
+                buttonType = ButtonType.Primary
+            ) { isShowDialog = true }
         }
 
         CookieboxTextField(
